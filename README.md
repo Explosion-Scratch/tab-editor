@@ -2,6 +2,10 @@
 
 A minimalistic and keyboard driven guitar tab editor to quickly jot down tabs.
 
+
+https://github.com/user-attachments/assets/53dbc72f-22e5-43f2-a9f6-2a58802223be
+
+
 **Features**:
 - ▶️ Play back tabs
 - 🎹 Keyboard driven input, easily input notes
