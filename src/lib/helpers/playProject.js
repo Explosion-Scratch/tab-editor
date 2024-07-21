@@ -1,7 +1,7 @@
 import * as Tone from "tone";
 import isValidNote from "./isValidNote";
 
-export default async function play(notes, tuning, bpm) {
+export default async function play(notes, tuning, bpm, cursorCallBack = () => {}) {
   const strings = tuning.tuning.split("").map((i, idx) => Tone.Frequency(`${i}${tuning.octaves[idx]}`).valueOf());
   console.log({strings})
   console.log(notes);
@@ -33,6 +33,9 @@ export default async function play(notes, tuning, bpm) {
       }
       let frequency = getFret(parseInt(currentNote), strIdx);
       synth.triggerAttackRelease(frequency, getNoteLength(noteColIdx, strIdx), time);
+      setTimeout(() => {
+        cursorCallBack(noteColIdx);
+      }, time * 1000)
     }
   }
 

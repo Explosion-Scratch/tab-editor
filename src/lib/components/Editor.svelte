@@ -401,7 +401,7 @@
     >
     <div class="buttons">
       <button
-        on:click={() => (playProject(project.notes, project.tuning, project.bpm),toast('Playing'))}
+        on:click={() => (playProject(project.notes, project.tuning, project.bpm, (col) => (cursor.col = col)),toast('Playing'))}
       >
         Play
       </button>
